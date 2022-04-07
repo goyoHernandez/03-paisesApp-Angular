@@ -1,0 +1,94 @@
+<div *ngIf="countries.length == 0; else divCountry" class="alert alert-info">
+  Espere por favor...
+</div>
+<ng-template #divCountry>
+  <div class="row mb-4">
+    <h3>Detalle del país</h3>
+  </div>
+  <div *ngFor="let country of countries" class="card" style="width: 15rem">
+    <img
+      [src]="country.flags.png"
+      class="card-img-top"
+      alt="country.name.common"
+    />
+    <div class="card-body">
+      <h3 class="card-title">
+        {{ country.name.common }}
+      </h3>
+      <h6>{{ country.capital[0] }}</h6>
+      <p class="card-text">{{ country.population | number }}</p>
+      <p class="card-text">Código numérico {{ country.area }}</p>
+      <p class="card-text">{{ country.cca3 }}</p>
+      <p>
+        <span class="badge bg-primary mr-1">
+          {{ country.translations["ara"].common }}
+        </span>
+        <span class="badge bg-primary mr-1">
+          {{ country.translations["ces"].common }}
+        </span>
+        <span class="badge bg-primary mr-1">
+          {{ country.translations["cym"].common }}
+        </span>
+        <span class="badge bg-primary mr-1">
+          {{ country.translations["deu"].common }}
+        </span>
+        <span class="badge bg-primary mr-1">
+          {{ country.translations["est"].common }}
+        </span>
+        <span class="badge bg-primary mr-1">
+          {{ country.translations["fin"].common }}
+        </span>
+        <span class="badge bg-primary mr-1">
+          {{ country.translations["fra"].common }}
+        </span>
+        <span class="badge bg-primary mr-1">
+          {{ country.translations["hrv"].common }}
+        </span>
+        <span class="badge bg-primary mr-1">
+          {{ country.translations["hun"].common }}
+        </span>
+        <span class="badge bg-primary mr-1">
+          {{ country.translations["ita"].common }}
+        </span>
+        <span class="badge bg-primary mr-1">
+          {{ country.translations["jpn"].common }}
+        </span>
+        <span class="badge bg-primary mr-1">
+          {{ country.translations["kor"].common }}
+        </span>
+        <span class="badge bg-primary mr-1">
+          {{ country.translations["nld"].common }}
+        </span>
+        <span class="badge bg-primary mr-1">
+          {{ country.translations["per"].common }}
+        </span>
+        <span class="badge bg-primary mr-1">
+          {{ country.translations["pol"].common }}
+        </span>
+        <span class="badge bg-primary mr-1">
+          {{ country.translations["por"].common }}
+        </span>
+        <span class="badge bg-primary mr-1">
+          {{ country.translations["rus"].common }}
+        </span>
+        <span class="badge bg-primary mr-1">
+          {{ country.translations["slk"].common }}
+        </span>
+        <span class="badge bg-primary mr-1">
+          {{ country.translations["spa"].common }}
+        </span>
+        <span class="badge bg-primary mr-1">
+          {{ country.translations["swe"].common }}
+        </span>
+        <span class="badge bg-primary mr-1">
+          {{ country.translations["urd"].common }}
+        </span>
+        <span class="badge bg-primary mr-1">
+          {{ country.translations["zho"].common }}
+        </span>
+      </p>
+    </div>
+  </div>
+
+  <!-- <pre class="mt-5">{{ countries | json }}</pre> -->
+</ng-template>

@@ -1,0 +1,22 @@
+<div class="animate__animated animate__backInDown">
+  <h2>Por Capital</h2>
+  <hr />
+  <div class="row">
+    <div class="col">
+      <app-country-input
+        (onKeyPress)="searchCountryByCapital($event)"
+        placeHolder="Busqueda por capital . . ."
+      ></app-country-input>
+    </div>
+  </div>
+  <hr />
+</div>
+
+<div *ngIf="existError" class="alert alert-danger">
+  No se encontrarón resultados para {{ txtCapital }}
+</div>
+<div *ngIf="countries.length > 0" class="row">
+  <div class="col">
+    <app-country-table [countries]="countries"></app-country-table>
+  </div>
+</div>
